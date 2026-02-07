@@ -25,17 +25,26 @@ public class User {
     private String username;
 
     @NotBlank
-    @Size(max = 100)
+    @Size(max = 255)
     @Email
     @Column(unique = true)
     private String email;
 
     @NotBlank
-    @Size(max = 120)
+    @Size(max = 255)
     private String password;
+    @Column(name = "first_name")
+    @NotBlank
+    @Size(max = 100)
+    private String firstName;
 
+    @Column(name = "last_name")
+    @Size(max = 100)
+    private String lastName;
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+    @Column(name = "last_login")
+    private LocalDateTime lastLogin;
 
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
